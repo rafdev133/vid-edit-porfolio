@@ -358,29 +358,23 @@ body {
   font-weight: 700;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-
-/* Only for WhatsApp tooltip */
-.whatsapp-btn {
-  position: relative; /* needed for tooltip positioning */
-}
-
-/* Hidden tooltip by default */
+/* WhatsApp tooltip container - bigger */
 .whatsapp-tooltip {
   visibility: hidden;
   opacity: 0;
-  width: 200px;
+  width: 280px; /* increased from 200px */
   background: rgba(11, 15, 26, 0.95);
   color: #e5e7eb;
   text-align: center;
   border-radius: 12px;
-  padding: 15px;
+  padding: 20px; /* slightly more padding */
   position: absolute;
   top: 50%;
-  left: 110%; /* position to the right of button */
+  left: 110%; 
   transform: translateY(-50%);
   z-index: 50;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(56,189,248,0.4);
+  box-shadow: 0 6px 20px rgba(56,189,248,0.4);
 }
 
 /* Show tooltip on hover */
@@ -390,15 +384,24 @@ body {
   transform: translateY(-50%) translateX(0);
 }
 
-/* QR code image */
+/* QR code image - bigger */
 .whatsapp-tooltip img {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
-  border-radius: 8px;
+  width: 160px;  /* increased from 100px */
+  height: 160px; /* increased from 100px */
+  margin-bottom: 12px;
+  border-radius: 10px;
   border: 2px solid #38bdf8;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Text inside tooltip - bigger and more readable */
+.whatsapp-tooltip div {
+  font-size: 1rem; /* increased from default 0.8rem */
+  margin-bottom: 4px;
+}
 
 /* 1. FLUID TYPOGRAPHY & LAYOUT ADJUSTMENTS */
 
@@ -850,3 +853,4 @@ html, body {
   }
 
 }
+
