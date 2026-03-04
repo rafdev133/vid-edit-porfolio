@@ -359,6 +359,45 @@ body {
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
+/* Only for WhatsApp tooltip */
+.whatsapp-btn {
+  position: relative; /* needed for tooltip positioning */
+}
+
+/* Hidden tooltip by default */
+.whatsapp-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  width: 200px;
+  background: rgba(11, 15, 26, 0.95);
+  color: #e5e7eb;
+  text-align: center;
+  border-radius: 12px;
+  padding: 15px;
+  position: absolute;
+  top: 50%;
+  left: 110%; /* position to the right of button */
+  transform: translateY(-50%);
+  z-index: 50;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(56,189,248,0.4);
+}
+
+/* Show tooltip on hover */
+.whatsapp-btn:hover .whatsapp-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* QR code image */
+.whatsapp-tooltip img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 2px solid #38bdf8;
+}
 
 
 /* 1. FLUID TYPOGRAPHY & LAYOUT ADJUSTMENTS */
@@ -809,4 +848,5 @@ html, body {
   #heroLogo {
     pointer-events: none; /* Disables the trigger so it's just a logo */
   }
+
 }
